@@ -18,6 +18,10 @@ const store = new sessionStore({
   db: db,
 });
 
+(async () => {
+  await db.sync();
+})();
+
 app.use(
   session({
     secret: "13u4tnkdfsi8348ijjnsduauenauasdasdas",
@@ -45,6 +49,7 @@ app.use(UserRoute);
 app.use(AuthRoute);
 app.use(BarangRoute);
 
+store.sync();
 app.get("/", (req, res) => {
   res.send("Gilang dan Silpiy!");
 });
