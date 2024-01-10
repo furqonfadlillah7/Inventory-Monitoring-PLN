@@ -1,0 +1,29 @@
+POST http://localhost:5002/users
+Content-Type: application/json
+
+{
+    "name": "Gilang",
+    "email": "admin14@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "admin"
+}
+
+
+###
+POST http://localhost:5002/login
+Content-Type: application/json
+
+{
+    "email": "admin14@gmail.com",
+    "password": "123456"
+}
+
+###
+Get http://localhost:5002/me
+
+###
+delete http://localhost:5002/logout
+
+###
+GET http://localhost:5002/users
